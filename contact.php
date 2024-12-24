@@ -140,8 +140,8 @@
 
 
     </div>
-    <div>
-  <p><a  href="logout.php"><button > Logout</button></a></p>
+    <div class="d-flex justify-content-center align-items-center">
+  <p><a href="logout.php"><button class="btn btn-primary"> Logout</button></a></p>
 </div>
 
 

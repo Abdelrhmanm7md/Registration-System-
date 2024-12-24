@@ -40,25 +40,29 @@ body {
  padding: 20px;
  font-size: 20px;
 }
+.details{
+  box-shadow: 10px 6px 10px rgba(0, 0, 0, 0.3);
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
 <div class="header">
- <h1>Staff</h1>
+ <h1 class="text-white">Staff</h1>
 </div>
 
 <div style="display: flex; justify-content: center">
 
-<div class="nav">
- <a><button onclick="changeSection('det')">Details</button> </a>
- <a><button onclick="changeSection('tt')">Time Table</button></a>
+<div class="nav d-flex wrap">
+ <a><button class="btn btn-primary" onclick="changeSection('det')">Details</button> </a>
+ <a><button class="btn btn-primary" onclick="changeSection('tt')">Time Table</button></a>
 </div>
 </div>
 <div class="content" id="det">
- <h2 class="mb-4">Details</h2>
-<div>
+<div class="details p-3">
+<h2 class="mb-4">Details</h2>
+
  <?php $instructorFname = $_SESSION['instructorFname']; ?>
 
  <p>Full Name  : <?php echo $_SESSION['instructorFname'] ?> </p>
@@ -165,11 +169,11 @@ $facultyInfo = $result -> fetch_assoc();
 
 
 
-<div>
-  <p><a  href="contact.php"><button > Contact Us - Support</button></a></p>
+<div class="p-2">
+  <p><a  href="contact.php"><button class="btn btn-primary"> Contact Us - Support</button></a></p>
 </div>
-<div>
-  <p><a  href="logout.php"><button > Logout</button></a></p>
+<div class="p-2">
+  <p><a  href="logout.php"><button class="btn btn-primary"> Logout</button></a></p>
 </div>
 <script> 
 let det = document.getElementById("det");

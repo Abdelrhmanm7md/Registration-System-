@@ -41,26 +41,28 @@ body {
  padding: 20px;
  font-size: 20px;
 }
+.details{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
 <div class="header">
- <h1>Admin View <?php echo $_GET['studentFirstName']?></h1>
+ <h1 class="text-white">Admin View <?php echo $_GET['studentFirstName']?></h1>
 </div>
 
 <div style="display: flex; justify-content: center">
 
-<div class="nav">
- <a><button onclick="changeSection('det')">Details</button> </a>
- <a><button onclick="changeSection('reg')"> Academic Registration </button></a>
- <a><button onclick="changeSection('tt')">Time Table</button></a>
- <a><button onclick="changeSection('pay')">Payment</button></a>
+<div class="nav d-flex wrap">
+ <a><button class="btn btn-primary" onclick="changeSection('det')">Details</button> </a>
+ <a><button class="btn btn-primary" onclick="changeSection('reg')"> Academic Registration </button></a>
+ <a><button class="btn btn-primary" onclick="changeSection('tt')">Time Table</button></a>
+ <a><button class="btn btn-primary" onclick="changeSection('pay')">Payment</button></a>
 </div>
 </div>
 <div class="content" id="det">
- <h2 class="mb-4">Details</h2>
   <?php
         $query    = "SELECT * FROM student WHERE studentID  ='$studentID' ";
 
@@ -69,7 +71,8 @@ $rows = mysqli_num_rows($result);
 $studentInfo = $result -> fetch_assoc();
 
 ?>
-<div>
+<div class="details p-3">
+<h2 class="mb-4">Details</h2>
  <?php $studentAddress = $studentInfo['studentAddress']; ?>
  <?php $studentDOB = $studentInfo['studentDOB']; ?>
  <?php $GPA = $studentInfo['GPA']; ?>
@@ -238,8 +241,8 @@ $depInfo = $result -> fetch_assoc();
 
 
 
-<div>
-  <p><a href="logout.php"><button> Logout </button> <a href="AdmStuEdit.php?studentFirstName=<?=$studentInfo['studentFirstName']?>&studentID=<?=$studentID?>"><button> Edit </button></a></p>
+<div class="p-4">
+  <p><a href="logout.php"><button class="btn btn-primary"> Logout </button> <a href="AdmStuEdit.php?studentFirstName=<?=$studentInfo['studentFirstName']?>&studentID=<?=$studentID?>"><button class="btn btn-primary"> Edit </button></a></p>
 </div>
 
 

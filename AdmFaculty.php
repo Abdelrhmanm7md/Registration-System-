@@ -45,11 +45,11 @@ require('db_conn.php');
     </head>
 <body>
 
-    <div class="header">
- <h1>Administrator Access Control</h1>
+    <div class="header text-white">
+ <h1 class="text-center">Administrator Access Control</h1>
 </div>
 <div class="content" id="det">
- <h2 class="mb-4">Alexandria University</h2>
+ <h2 class="mb-4 text-center my-4">Alexandria University</h2>
 <div>
     <div>
 <table class="table">
@@ -72,7 +72,7 @@ require('db_conn.php');
     <tr>
       <td class="text-center"><?=$row["facultyFirstName"]?></td>
       <td class="text-center"><?=$row["count(d.departmentName)"]?></td>
-      <td class="text-center"><form action="AdmDepartments.php" method='GET'><button type="submit" class="btn btn-primary" value="<?= $row["facultyFirstName"] ?>" name="FacultyName">View</button><input type="hidden" value="<?= $row["facultyID"] ?>" name="FacultyID"></form></td> 
+      <td class="text-center"><form action="AdmDepartments.php" method='GET'><button type="submit" class="btn btn-danger" value="<?= $row["facultyFirstName"] ?>" name="FacultyName">View</button><input type="hidden" value="<?= $row["facultyID"] ?>" name="FacultyID"></form></td> 
       </tr>
       <?php
           }
@@ -82,8 +82,8 @@ require('db_conn.php');
  </div>
 </div>
 <div>
-  <p><a  href="logout.php"><button > Logout</button></a></p>
-  <p><a  href="signUp.php"><button > Create Account</button></a></p>
+  <p><a  href="logout.php"><button class="btn btn-primary"> Logout</button></a></p>
+  <p><a  href="signUp.php"><button class="btn btn-primary" > Create Account</button></a></p>
 </div>
 </body>
 </html>

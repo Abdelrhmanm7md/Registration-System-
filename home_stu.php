@@ -1,5 +1,4 @@
 <?php
-//include auth_session.php file on all user panel pages
 include("auth_session.php");
 require('db_conn.php');
 $studentID = $_SESSION['studentID'];
@@ -41,38 +40,42 @@ body {
  padding: 20px;
  font-size: 20px;
 }
+.details{
+  box-shadow: 0 6px 8px 6px rgba(0, 0, 0, 0.2);
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
 <div class="header">
- <h1>Student Registration</h1>
+ <h1 class="text-white">Student Registration</h1>
 </div>
 
 <div style="display: flex; justify-content: center">
 
-<div class="nav">
- <a><button onclick="changeSection('det')">Details</button> </a>
- <a><button onclick="changeSection('reg')"> Academic Registration </button></a>
- <a><button onclick="changeSection('tt')">Time Table</button></a>
- <a><button onclick="changeSection('pay')">Payment</button></a>
+<div class="nav d-flex wrap">
+ <a><button class="btn btn-primary mt-2" onclick="changeSection('det')">Details</button> </a>
+ <a><button class="btn btn-primary mt-2" onclick="changeSection('reg')"> Academic Registration </button></a>
+ <a><button class="btn btn-primary mt-2" onclick="changeSection('tt')">Time Table</button></a>
+ <a><button class="btn btn-primary mt-2" onclick="changeSection('pay')">Payment</button></a>
 </div>
 </div>
 <div class="content" id="det">
- <h2 class="mb-4">Details</h2>
-<div>
+
+<div class="details p-3">
+<h2 class="mb-4">Details</h2>
  <?php $studentAddress = $_SESSION['studentAddress']; ?>
  <?php $studentDOB = $_SESSION['studentDOB']; ?>
  <?php $GPA = $_SESSION['GPA']; ?>
 
- <p>Full Name  : <?php echo $_SESSION['studentFirstName'] ." " .$_SESSION['studentLastName']?> </p>
+ <p class="fs-3">Full Name  : <?php echo $_SESSION['studentFirstName'] ." " .$_SESSION['studentLastName']?> </p>
 
- <p>Address  : <?php echo   $_SESSION['studentAddress'];?>  </p>
+ <p  class="fs-3">Address  : <?php echo   $_SESSION['studentAddress'];?>  </p>
  
- <p>Date of Birth  : <?php echo   $_SESSION['studentDOB'];?>  </p>
+ <p class="fs-3">Date of Birth  : <?php echo   $_SESSION['studentDOB'];?>  </p>
 
- <p>Email  : <?php echo   $_SESSION['studentEmail'];?>  </p>
+ <p class="fs-3">Email  : <?php echo   $_SESSION['studentEmail'];?>  </p>
 <?php
   $facultyID = $_SESSION['facultyID'];
         $query    = "SELECT * FROM faculty WHERE facultyID ='$facultyID' ";
@@ -107,7 +110,7 @@ $depInfo = $result -> fetch_assoc();
  </div>
 </div>
 <div class="content d-none" id="tt">
- <h2>Time Table</h2>
+ <h2 class="text-center my-4">Time Table</h2>
 <div>
 <table class="table">
     <thead>
@@ -155,9 +158,9 @@ $depInfo = $result -> fetch_assoc();
  </div>
 </div>
 <div class="content d-none" id="reg">
- <h2>Academic Registration</h2>
+ <h2 class="text-center my-4">Academic Registration</h2>
 <div>
-<table class="table">
+<table class="table border-collapse">
     <thead>
       <tr>
         <th class="text-center">Name</th>
@@ -165,7 +168,6 @@ $depInfo = $result -> fetch_assoc();
         <th class="text-center">Credits</th>
         <th class="text-center">Level</th>
         <th class="text-center">Status</th>
-
         <th class="text-center" colspan="2">Action</th>
       </tr>
     </thead>
@@ -231,11 +233,11 @@ $depInfo = $result -> fetch_assoc();
 </div>
 
 
-<div>
-  <p><a  href="contact.php"><button > Contact Us - Support</button></a></p>
+<div class="m-4 d-flex wrap">
+  <p><a  href="contact.php"><button class="btn btn-primary"> Contact Us - Support</button></a></p>
 </div>
-<div>
-  <p><a  href="logout.php"><button > Logout</button></a></p>
+<div class="m-4 d-flex wrap">
+  <p><a  href="logout.php"><button class="btn btn-primary"> Logout</button></a></p>
 </div>
 <script> 
 let det = document.getElementById("det");

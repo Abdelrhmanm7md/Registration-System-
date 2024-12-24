@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $facultyID = $_POST['facultyID'];
     $instructorFname = $_POST['instructorFname'];
     $instructorEmail = $_POST['instructorEmail'];
-    $instructorPassword = password_hash($_POST['instructorPassword'], PASSWORD_DEFAULT); // Hashing the password for security
+    $instructorPassword = $_POST['instructorPassword']; // Hashing the password for security
 
     // Database connection
     $servername = "localhost";

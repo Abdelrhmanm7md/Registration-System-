@@ -24,7 +24,6 @@
             width: 400px;
             max-width: 100%;
             height: 48vh;
-
         }
 
         .tab {
@@ -86,28 +85,32 @@
             text-align: center;
         }
     </style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   </head>
 <body>
-    <div class="signup-form">
+  <div class="container">
+    <div class="signup-form text-center mt-3">
         <h1>ALEXANDRIA UNIVERSITY</h1>
-        <h2>Sign Up </h2>
+        <h2 class="mb-4">Sign Up </h2>
             <!-- <input type="text" class="login-input" name="Email" placeholder="Email" autofocus="true" required>
             <input type="password" class="login-input" name="Password" placeholder="Password" required>
             <br> -->
-            <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="usertype" id="usertype_0" value="1">
+            <div class="form-check form-check-inline mt-3">
+  <input class="form-check-input" type="radio" name="usertype" id="usertype_0" value="1" checked="checked">
   <label class="form-check-label" for="usertype_0">Admin</label>
 </div>
-<div class="form-check form-check-inline">
+<div class="form-check  form-check-inline mt-3">
   <input class="form-check-input" type="radio" name="usertype" id="usertype_2" value="3">
   <label class="form-check-label" for="usertype_2">Staff</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="usertype" id="usertype_1" value="2" checked="checked">
+<div class="form-check form-check-inline mt-3">
+  <input class="form-check-input" type="radio" name="usertype" id="usertype_1" value="2">
   <label class="form-check-label" for="usertype_1">Student</label>
 </div>
 <br>
-<button id="redirectButton" class="btn btn-primary">Sign Up</button>
+<button id="redirectButton" class="btn btn-primary mt-4">Sign Up</button>
+</div>
 
 <script>
   document.getElementById('redirectButton').addEventListener('click', function () {
